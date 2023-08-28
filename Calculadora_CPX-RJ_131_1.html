@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+	
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<style>
+
+  body,td,th { font-size: 14px; font-family: tahoma; color: #666; cursor: default; vertical-align: baseline; outline: 0; line-height: 1; margin: 0; padding: 0; word-wrap: break-word; }
+a,a:link,a:visited,a:active,a:hover { font-family: tahoma; font-size: 14px; color: #666; text-decoration: none; }
+div,span,applet,object,iframe,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr { border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent; margin:0; padding:0; }
+:focus { outline:0; }
+img { border:none; }
+::-webkit-scrollbar { width: 0; }
+::selection { background: #FFB90F; }
+::-moz-selection { background: #0fb3ff; }
+
+#actionmenu {
+	top: 50%;
+	left: 50%;
+	width: 1200px;
+	height: 700px;
+	display: none;
+	overflow: auto;
+	position: fixed;
+	border-top: 12px solid #111;
+	border-left: 12px solid #111;
+	border-right: 12px solid #111;
+	border-bottom: 40px solid #111;
+	transform: translate(-50%,-50%);
+	background: #FFB90F;
+}
+body{
+background-color: #d8d7d6;
+}
+buttom {
+	top: 50%;
+	left: 50%;
+	width: 40px;
+	height: 14px;
+	display: none;
+	position: fixed;
+	margin-top: 355px;
+	background: #ffffff;
+	transform: translate(-50%,-50%);
+}
+
+buttom:hover {
+	background: #fff;
+}
+
+#header{
+	float: left;
+	width: 100%;
+	height: 70px;
+	background: #5f4230;
+}
+
+#header img{
+	width: 60px;
+	height: auto;
+	float: left;
+	padding: 7px;
+}
+
+#header h1{
+	float: left;
+	margin: 20px 20px;
+	color: #fff;
+}
+
+nav{
+	width: 15%;
+	height: 100%;
+	float: left;
+}
+
+.menu {
+	width: 100%;
+	height: 186px;
+	float: left;
+	/*background: rgba(118,194,169,0.1);*/
+}
+.sub-menu {
+	width: 100%;
+	height: 100%;
+	float: left;
+	border-right: 1px solid #000;
+	/*background: rgba(118,194,169,0.1);*/
+}
+
+.menu a {
+	color: #a2a0a0;
+	padding: 25px 10px;
+	font-weight: 700;
+	float: left;
+	width: 89%;
+	border-right: solid 1px #000;
+}
+
+.menu a:hover, .menu a:focus {
+	/*background: rgba(118,194,169,1);*/
+	color: #5f4230;
+	border-top: solid 1px #000;
+	border-bottom: solid 1px #000;
+	border-right: 0;
+	width: 161px;
+}
+
+.title {
+	width: 1125px;
+	float: left;
+	font-size: 20px;
+	font-weight: 700;
+	padding: 5px 0 10px 15px;
+	border-bottom: 1px dashed #999;
+}
+
+.stitle {
+	width: 1110px;
+	padding: 15px 15px 30px;
+	float: left;
+	font-size: 14px;
+	line-height: 25px;
+}
+
+.stitle2 {
+	width: 1110px;
+	padding: 15px 15px 0;
+	float: left;
+	font-size: 14px;
+	line-height: 25px;
+}
+
+s {
+	color: #45fffc;
+	text-decoration: none;
+}
+
+.dtitle2 {
+	width: 355px;
+	padding: 15px 0 30px 15px;
+	float: left;
+	font-size: 14px;
+	line-height: 25px;
+}
+
+.dtitle3 {
+	width: 355px;
+	padding: 15px 0 0 15px;
+	float: left;
+	font-size: 14px;
+	line-height: 25px;
+}
+
+#opacity {
+	background: rgba(0,0,0,0.05);
+	padding: 15px;
+	width: 1170px;
+	float: left;
+}
+
+#opacity2 {
+	padding: 15px;
+	width: 1170px;
+	float: left;
+}
+
+#opacity:hover, #opacity2:hover {
+	background: rgba(169,73,135,0.1);
+}
+
+.title-one {
+	width: 310px;
+	float: left;
+	font-size: 20px;
+	font-weight: 700;
+	padding: 5px 0 10px 15px;
+	border-bottom: 1px dashed #999;
+	margin: 0 0 15px;
+}
+
+.title-two {
+	width: 150px;
+	float: left;
+	font-size: 20px;
+	font-weight: 700;
+	text-align: center;
+	padding: 5px 0 10px 0;
+	border-bottom: 1px dashed #999;
+	margin: 0 0 15px;
+}
+
+.title-tree {
+	width: 150px;
+	float: left;
+	font-size: 20px;
+	font-weight: 700;
+	text-align: center;
+	padding: 5px 0 10px 0;
+	border-bottom: 1px dashed #999;
+	margin: 0 0 15px;
+}
+
+.title-four {
+	width: 200px;
+	float: left;
+	font-size: 20px;
+	font-weight: 700;
+	padding: 5px 0 10px 15px;
+	border-bottom: 1px dashed #999;
+	margin: 0 0 15px;
+}
+
+.parts-one {
+	font-weight: 700;
+	width: 310px;
+	float: left;
+}
+
+.parts-two {
+	width: 150px;
+	float: left;
+	text-align: center;
+}
+
+.parts-tree {
+	width: 150px;
+	float: left;
+	text-align: center;
+}
+
+.parts-four {
+	width: 545px;
+	float: left;
+	padding: 0 0 0 15px;
+}
+
+.quadro{
+	position: relative;
+	float: left;
+	width: 32%;
+}
+
+.quadro button{
+	border:0;
+	background-color: #db6516;
+	color: #fff;
+	padding: 7px 30px;
+	margin-bottom: 15px;
+	border-bottom: 3px rgb(209, 8, 8) solid;
+}
+.right {
+text-align: right;
+}
+
+.left {
+text-align: left;
+}
+.center { 
+text-align: center;
+ display: flex;
+   align-items:center;
+   font-weight: bold;
+   font-size: 18px;
+   
+  justify-content: center;
+}
+
+
+</style>
+<head>
+ 
+ 
+  <title>Calculadora Mecânica - Complexo RJ</title>
+
+  <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/1114589460005392435/1142278576595550368/Sabado_e_dia_5.png">
+</head>    
+ 
+<body>  <center>
+<div class="center">
+  
+<img src="https://cdn.discordapp.com/attachments/1114589460005392435/1142278576595550368/Sabado_e_dia_5.png" width="130" height="130"><FONT COLOR="#00000">CALCULADORA MECÂNICA - COMPLEXO RJ</FONT> </div></center>
+ 
+
+<div id="1" class="fc quadro form-control">
+ 
+
+	
+
+	
+	<h3><FONT COLOR="#FF4500">💨 DESEMPENHO:</FONT></h3>
+	<p><input id="FREIO" type="checkbox" name="mec" value="1|80000" onclick="calcular()">FREIO: R$ 80.000</p>
+	<p><input id="MOTOR" type="checkbox" name="mec" value="1|80000" onclick="calcular()">MOTOR: R$ 80.000</p>
+	<p><input id="SUSPENSÃO" type="checkbox" name="mec" value="1|80000" onclick="calcular()">SUSPENSÃO: R$ 80.000</p>
+	<p><input id="TRANSMISSÃO" type="checkbox" name="mec" value="1|80000" onclick="calcular()">TRANSMISSÃO: R$ 80.000</p>
+    <p><input id="TURBO" type="checkbox" name="mec" value="1|80000" onclick="calcular()">TURBO: R$ 80.000</p>
+	<h3><FONT COLOR="#FF4500">🖋 PINTURA:</FONT></h3>
+	<p><input id="COR PRIMARIA" type="checkbox" name="mec" value="1|15000" onclick="calcular()">COR PRIMARIA: R$ 15.000 </p>
+	<p><input id="COR SECUNDARIA " type="checkbox" name="mec" value="1|15000" onclick="calcular()">COR SECUNDARIA: R$15.000</p>
+	<p><input id="TIPO DE TINTA" type="checkbox" name="mec" value="1|10000" onclick="calcular()">TIPO DE TINTA: R$10.000</p>
+    <p><input id="CROMADO" type="checkbox" name="mec" value="1|20000" onclick="calcular()">CROMADO: R$20.000</p>
+	<p><input id="PEROLADO" type="checkbox" name="mec" value="1|50000" onclick="calcular()">PEROLADO: R$50.000</p>
+	<p><input id="DECAL" type="checkbox" name="mec" value="1|20000" onclick="calcular()">DECAL: R$20.000</p>
+	<h3><FONT COLOR="#FF4500">📋 ESTÉTICA:</FONT></h3>
+	<p><input id="PARACHOQUE /D" type="checkbox" name="mec" value="1|30000" onclick="calcular()">PARACHOQUE /D: R$ 30.000 </p>
+	<p><input id="PARACHOQUE/T" type="checkbox" name="mec" value="1|30000" onclick="calcular()">PARACHOQUE/T: R$ 30.000</p>
+	<p><input id="PARALAMAS" type="checkbox" name="mec" value="1|30000" onclick="calcular()">PARALAMAS: R$ 30.000</p>
+	<p><input id="AEROFOLIO" type="checkbox" name="mec" value="1|30000" onclick="calcular()">AEROFOLIO: R$ 30.000</p>
+	<p><input id="GAIOLA" type="checkbox" name="mec" value="1|30000" onclick="calcular()">GAIOLA: R$ 30.000</p>
+	<p><input id="GRELHA" type="checkbox" name="mec" value="1|30000" onclick="calcular()">GRELHA: R$ 30.000</p>
+	<p><input id="DESIGN EXTERIOR " type="checkbox" name="mec" value="1|30000" onclick="calcular()">DESIGN EXTERIOR: R$ 30.000</p>
+	<p><input id="FUMAÇA DO PNEU" type="checkbox" name="mec" value="1|10000" onclick="calcular()">FUMAÇA DO PNEU: R$ 10.000</p>
+	<p><input id="PLACA " type="checkbox" name="mec" value="1|10000" onclick="calcular()">PLACA: R$ 10.000</p>
+	<p><input id="NEON" type="checkbox" name="mec" value="1|10000" onclick="calcular()">NEON: R$ 10.000</p>
+	<p><input id="FILTRO DE AR" type="checkbox" name="mec" value="1|30000|62500" onclick="calcular()">FILTRO DE AR: R$ 30.000</p>
+	<p><input id="SUPORTE DE SUSPENSÃO " type="checkbox" name="mec" value="1|30000" onclick="calcular()">SUPORTE DE SUSPENSÃO: R$ 30.000</p>
+	<p><input id="XENON  " type="checkbox" name="mec" value="1|30000|62500" onclick="calcular()">XENON: R$ 30.000</p>
+	<p><input id="DVD PAYER" type="checkbox" name="mec" value="1|30000" onclick="calcular()">DVD PAYER: R$ 30.000</p>
+	<p><input id="BANCOS" type="checkbox" name="mec" value="1|30000" onclick="calcular()">BANCOS: R$ 30.000</p>
+	<p><input id="HIDRÁULICA " type="checkbox" name="mec" value="1|30000" onclick="calcular()">HIDRÁULICA: R$ 30.000</p>
+	<p><input id="RODAS IMPORTADAS " type="checkbox" name="mec" value="1|50000" onclick="calcular()">RODAS IMPORTADAS: R$ 50.000</p>
+	<p><input id="RODAS COMUNS " type="checkbox" name="mec" value="1|25000" onclick="calcular()">RODAS COMUNS: R$ 25.000</p>
+	<p><input id="CAPO " type="checkbox" name="mec" value="1|30000" onclick="calcular()">CAPO: R$ 30.000</p>
+	<p><input id="TETO " type="checkbox" name="mec" value="1|80000" onclick="calcular()">TETO: R$ 80.000</p>
+</div> 
+	
+
+ <div id="2" class="quadro">
+
+ 
+	<h3><FONT COLOR="#FF4500">📋 ESTÉTICA2:</FONT></h3>
+		<p><input id="INTERIOR PORTA " type="checkbox" name="mec" value="1|30000" onclick="calcular()">INTERIOR PORTA: R$ 30.000</p>
+		<p><input id="ENFEITE PAINEL " type="checkbox" name="mec" value="1|25000" onclick="calcular()">ENFEITE PAINEL: R$ 25.000</p>
+		<p><input id="PAINEL " type="checkbox" name="mec" value="1|30000" onclick="calcular()">PAINEL: R$ 30.000</p>
+		<p><input id="ENFEITE DA LAVANCA " type="checkbox" name="mec" value="1|25000" onclick="calcular()">ENFEITE DA LAVANCA: R$ 25.000</p>
+		<p><input id="JANELA " type="checkbox" name="mec" value="1|25000" onclick="calcular()">JANELA: R$ 25.000</p>
+		<p><input id="BLOCO DO MOTOR " type="checkbox" name="mec" value="1|80000" onclick="calcular()">BLOCO DO MOTOR: R$ 80.000</p>
+		<p><input id="SOM NO PORTA MALA " type="checkbox" name="mec" value="1|25000" onclick="calcular()">SOM NO PORTA MALA: R$ 25.000</p>
+		<p><input id="SOM NA PORTA " type="checkbox" name="mec" value="1|25000" onclick="calcular()">SOM NA PORTA: R$ 25.000</p>
+		<p><input id="BUZINA " type="checkbox" name="mec" value="1|25000" onclick="calcular()">BUZINA: R$ 25.000</p>
+		<p><input id="ESCAPAMENTO " type="checkbox" name="mec" value="1|30000" onclick="calcular()">ESCAPAMENTO: R$ 30.000</p>
+		<p><input id="TANQUE " type="checkbox" name="mec" value="1|35000" onclick="calcular()">TANQUE: R$ 35.000</p>
+		<p><input id="VOLANTE " type="checkbox" name="mec" value="1|50000" onclick="calcular()">VOLANTE: R$ 50.000</p>
+		<p><input id="SAIAS" type="checkbox" name="mec" value="1|30000" onclick="calcular()">SAIAS: R$ 30.000</p>
+		<p><input id="INSUFILM " type="checkbox" name="mec" value="1|30000" onclick="calcular()">INSUFILM: R$ 30.000</p>
+		<p><input id="CAPA DO FAROL " type="checkbox" name="mec" value="1|30000" onclick="calcular()">CAPA DO FAROL: R$ 30.000</p>
+
+	
+ </div>
+
+
+  <div class="quadro form-control">
+    <h3><font color="#000000">🔨 MECÂNICA</font></h3>
+    <h4>🛒 QUANTIDADE DE ITENS:</h4>
+    <input type="text" id="calc" name="calc" class="form-control" size="2" placeholder="Max:180" style="margin-right:5px; width:100px"> ITENS
+    <h4>💸 VALOR TOTAL: </h4>
+    <input type="text" id="cpx" name="cpx" class="form-control" readonly="true" size="5" style="margin-right:15px; width:100px">
+	<button class="btn btn-danger" onclick="limpar()"><i class="bi bi-trash"></i> Limpar</button>
+	
+		 <button class="btn btn-success" id="copy"> <i class="bi bi-clipboard"></i> Copiar</button>
+	<h1>Calculadora de Desconto 5%</h1>
+	<p>Coloque o valor a ser calculado abaixo</p><br>
+	<p>retire o . exemplo 80.000 deixe 80000</p>
+	<label for="originalValue">Valor:</label>
+	<input type="number" id="originalValue" step="0.01">
+	<button onclick="calculateDiscount()">Calcular</button>
+	<p>Valor com 5% de desconto: <span id="discountedValue"></span></p>
+
+	<script>
+	  function calculateDiscount() {
+		var originalValue = parseFloat(document.getElementById('originalValue').value);
+		var discountedValue = originalValue * 0.95; // Calcula o valor com 5% de desconto
+		document.getElementById('discountedValue').textContent = discountedValue.toFixed(2);
+	  }
+	  
+	</script>
+
+<h1>Calculadora de Desconto 10%</h1>
+<p>Coloque o valor a ser calculado abaixo</p><br>
+<p>retire o . exemplo 80.000 deixe 80000</p>
+<label for="originalValues2">Valor:</label>
+<input type="number" id="originalValues2" step="0.01">
+<button onclick="calculateDiscount2()">Calcular</button>
+<p>Valor com 10% de desconto: <span id="discountedValues2"></span></p> <!-- Corrigido o id aqui -->
+
+<script>
+  function calculateDiscount2() {
+	var originalValue2 = parseFloat(document.getElementById('originalValues2').value);
+	var discountedValue2 = originalValue2 * 0.9; // Calcula o valor com 10% de desconto
+	document.getElementById('discountedValues2').textContent = discountedValue2.toFixed(2);
+  }
+</script>
+
+
+  
+
+		<br> </font>
+
+
+
+		</div>
+	
+				
+				<h3>SELECIONADOS:</h3>
+				<textarea rows="10" cols="50" style="resize: none;" readonly="true" maxlength="500" id="areaText" class="TextoArtigos form-control"></textarea>
+
+				<div class="alert alert-red" id="penamaxima" style="display: none;" role="alert">
+					Excedeu 180 MESES
+				</div>
+				<h3>
+					<style>
+						.hidden-checkbox {
+							display: none;
+						}
+						</style>
+				</h3>
+				<font color="#b50000">
+					<input type="checkbox" class="form-check-input hidden-checkbox" id="advogado-30" name="advogado-30" value="0">
+				</font>
+				<font color="#6f747a"></font>
+				<div class="col col-md-12 advogado-1">
+					<h4>
+						<font color="#b50000">
+							<input id="reu-primario" type="checkbox" class="form-check-input hidden-checkbox" value="0" name="reu-primario" onchange="calcular()">
+						</font>
+						<font color="#6f747a"></font>
+					</h4>		
+				</div>
+				<div class="col col-md-12 advogado-2">
+					<h4>
+						<font color="#b50000">
+							<input id="reu-confesso" type="checkbox" class="form-check-input hidden-checkbox" value="0" name="reu-confesso" onchange="calcular()">
+						</font>    
+						<font color="#6f747a"></font>
+					</h4>
+				</div>
+					<br>
+					
+					<textarea rows="10" cols="50" style="resize: none; display: none;" readonly="true" maxlength="500" id="discord-text"></textarea>
+
+                	<input hidden="" id="pena-reduzida-70" value="70">
+                	<input hidden="" id="pena-reducao" type="number" value="0"> 
+
+                    <script type="text/javascript">(function(){window['__CF$cv$params']={r:'6d4ede693a774cf7',m:'c1hW1Rh0H4tuZl0wsr8lc_PxHochVPe94cU5za3H6pc-1643421646-0-AZgReWNppiCIufGN9b0SQAKCqRsLtHcwRgDjgAZ+Ebwly7w0zsT9G6XS1O/UzoI0KiHefNZG3S1S37LGPme9exr6Q+bETOtZoXvE80b2jTfbfvhbNPPCZOseNmfBmgNt6A/HEo8div1AtL5xdFuLfRozIq3iNLhezke9DJu8FQdEnFcZ+SAUTYcHVynGr69bHeJn9/0I1C6Z2kVFP5+t1xjmrXaI1cyd880XCyhvg3kG',s:[0xa3d3168605,0xba02de72f3],}})();</script><script type="text/javascript">(function(){window['__CF$cv$params']={r:'6d55320baf256030',m:'ZIEu.pp.iZbUyq5KJvDLfjpPqMeOMxiNGM_gE_5Duyk-1643487986-0-AcUKQeDM0xlzizuzSCE1OWs4UCC/gTki/Wf/ptjXki9iQ5VGlYhrXoxDtlJyTdabd/omn/0PoOs+p2TFELZ2mXXA6xQBQ2b+78uInsszFfSZ930uS3lQhVc0pV+mm90Hi0ieWJJmSuym9EtYDi4CGxRFI1YKe+wVHyalMeXttvlzsYErYN8azcWTRNNeh5t9RbTkmCwQHWLPNxXvCr0wo0DuT9CtjXmfznyCLMi9IUpe',s:[0x6efed7905d,0x60ab50310e],}})();</script>	
+                    
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                </div> 
+
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6d4ede693a774cf7',m:'c1hW1Rh0H4tuZl0wsr8lc_PxHochVPe94cU5za3H6pc-1643421646-0-AZgReWNppiCIufGN9b0SQAKCqRsLtHcwRgDjgAZ+Ebwly7w0zsT9G6XS1O/UzoI0KiHefNZG3S1S37LGPme9exr6Q+bETOtZoXvE80b2jTfbfvhbNPPCZOseNmfBmgNt6A/HEo8div1AtL5xdFuLfRozIq3iNLhezke9DJu8FQdEnFcZ+SAUTYcHVynGr69bHeJn9/0I1C6Z2kVFP5+t1xjmrXaI1cyd880XCyhvg3kG',s:[0xa3d3168605,0xba02de72f3],}})();</script><script type="text/javascript">(function(){window['__CF$cv$params']={r:'6d55320baf256030',m:'ZIEu.pp.iZbUyq5KJvDLfjpPqMeOMxiNGM_gE_5Duyk-1643487986-0-AcUKQeDM0xlzizuzSCE1OWs4UCC/gTki/Wf/ptjXki9iQ5VGlYhrXoxDtlJyTdabd/omn/0PoOs+p2TFELZ2mXXA6xQBQ2b+78uInsszFfSZ930uS3lQhVc0pV+mm90Hi0ieWJJmSuym9EtYDi4CGxRFI1YKe+wVHyalMeXttvlzsYErYN8azcWTRNNeh5t9RbTkmCwQHWLPNxXvCr0wo0DuT9CtjXmfznyCLMi9IUpe',s:[0x6efed7905d,0x60ab50310e],}})();</script></body>	
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+  $("#1 :checkbox").change(function() {
+    let textAreaVal=$(".TextoArtigos").val();
+    if($(this).prop("checked")==true){
+      if(!textAreaVal.includes($(this).attr("id"))){
+        textAreaVal += $(this).attr("id")+"\n";
+      }
+    }
+    else{
+       if(textAreaVal.includes($(this).attr("id"))){
+        textAreaVal = textAreaVal.replace($(this).attr("id"),"");
+      }
+    }
+
+
+   $(".TextoArtigos").val(textAreaVal);
+});
+  $("#2 :checkbox").change(function() {
+    let textAreaVal=$(".TextoArtigos").val();
+    if($(this).prop("checked")==true){
+      if(!textAreaVal.includes($(this).val())){
+        textAreaVal += $(this).attr("id")+"\n";
+      }
+    }
+    else{
+       if(textAreaVal.includes($(this).attr("id"))){
+        textAreaVal = textAreaVal.replace($(this).attr("id"),"");
+      }
+    }
+
+
+   $(".TextoArtigos").val(textAreaVal);
+});
+			function calcular() {
+		const checkboxes =  document.getElementsByName('mec');
+		let ids = [];
+		checkboxes.forEach(checkbox => {
+			if (checkbox.checked) {
+				ids.push(checkbox.id);				
+			}
+		});
+		document.getElementById('areaText').value = ids.join('\n');
+		var Pena = 0;
+		var Multa = 0;
+		var Fianca = 0;
+		var penaReduzir = 0;
+		var penaRe = 0;
+		var Condicional = "NÃO USAR";
+		var fiancaReduzir = 0;
+		/* Crimes */
+		var crimes = document.getElementsByName('mec');
+		for (var i = 0; i < crimes.length; i++) {
+			if (crimes[i].checked) {
+				var valores_crime = crimes[i].value.split("|");
+				//var button = crimes[i].relatedTarget;						
+				var Vinput =  crimes[i].dataset.base // "3" crimes[i].attr("");
+				//document.getElementById('input_teste').value = Vinput;	
+				//var Vmult = mult.val();
+				Pena += parseInt(valores_crime[0]);
+				Multa += parseInt(valores_crime[1]);
+				Fianca += parseInt(valores_crime[2]);
+				/*Condicional += parseInt(valores_crime[0])*4; */
+				Condicional = "NÃO USAR";						
+			}
+		}
+		/* dinheiro sujo */
+	
+		var reu_pri = document.getElementById("reu-primario");
+		var reu_conf = document.getElementById("reu-confesso");
+		
+		var Vmandado = document.getElementById("mandado");
+		var checkboxadv = document.getElementById("advogado-30");
+		if (reu_pri.checked) {
+			penaRe = penaRe + 30
+		}
+		if (reu_conf.checked) {
+			penaRe = penaRe + 20
+		}
+        if (checkboxadv.checked) {
+            penaRe = penaRe + 30
+        }
+		
+		if (penaRe > 70 ){
+			penaRe = 70;
+		}
+		
+		penaReduzir = Pena * parseInt(penaRe) / 100;
+        var limite = Pena - penaReduzir;
+        var valorFF = '';
+        if(Pena > 1000){
+            if (checkboxadv.checked) {
+                valorFF = 1000 * 0.7;
+                document.getElementById("calc").value = valorFF;
+            }else{
+                document.getElementById("calc").value = 1000;
+            }
+        }else{
+		    document.getElementById("calc").value = Pena - penaReduzir;
+        }
+		document.getElementById("cpx").value = "" + Multa.toLocaleString('pt-BR', { minimumFractionDigits: 0 }); 
+		
+			if (checkboxadv.checked) {
+			    document.getElementById("fianca").value = "R$" + Fianca.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+			}else{
+			    var FiancaFF = Fianca * 1.3;
+			    document.getElementById("fianca").value = "R$" + FiancaFF.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+			}
+		
+	}
+			function limpar() {
+	    var crimes = document.getElementsByName('mec');
+		for (var i = 0; i < crimes.length; i++) {
+			crimes[i].checked = false;
+		}
+		$("#reu-primario")[0].checked = false
+		$("#reu-confesso")[0].checked = false
+		$("#advogado-30")[0].checked = false
+
+		$("#fianca")[0].checked = false
+		
+		$("#fianca")[0].value = "";
+		$("#calc")[0].value = "";
+		$("#cpx")[0].value = "";
+		$("#input_sujo")[0].value = "";
+		$("#condicional")[0].value = "NÃO USAR";
+		$("#areaText")[0].value = "";
+		$("#itens")[0].value = "";
+		
+		$('#preso_nome').val("");
+		$('#preso_rg').val("");
+		$("#cpx").val("");
+		$("#adv_rg").val("");
+		$("#pena-reducao").val(0);
+    }
+    
+    $("#advogado-30").change(function () {
+        var checkbox = document.getElementById("advogado-30");
+        if (checkbox.checked) {
+            if ($("#adv_rg").val() === "") {
+                $("#advogado-30").prop({
+                  checked: false 
+                });
+                Swal.fire({
+                  text: 'Informe o RG do Advogado',
+                  icon: 'error',
+                  showCancelButton: false,
+                  confirmButtonColor: '#3085d6',
+                  confirmButtonText: 'Fechar'
+                });
+            }
+            calcular();
+        } else {
+            calcular();
+        }
+    });
+			
+			function copiar() { let textarea = document.getElementById("bruno"); textarea.select(); document.execCommand("copy"); }
+			 
+   
+		</script>
+		 
+
